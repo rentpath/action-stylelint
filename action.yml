@@ -1,0 +1,19 @@
+name: 'Run stylelint with reviewdog'
+description: '🐶 Run stylelint with reviewdog on pull requests to improve code review experience.'
+author: 'colinrymer with thanks to haya14busa (reviewdog)'
+inputs:
+  github_token:
+    description: 'GITHUB_TOKEN.'
+    required: true
+  level:
+    description: 'Report level for reviewdog [info,warning,error]'
+    default: 'error'
+  stylelint_input:
+    description: "Files or glob. Default: `**/*.css`.  It's same as `[input]` of stylelint."
+    default: '**/*.css'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'alert-triangle'
+  color: 'yellow'
