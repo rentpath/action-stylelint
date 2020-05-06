@@ -9,8 +9,12 @@ inputs:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
   stylelint_input:
-    description: "Files or glob. Default: `**/*.css`.  It's same as `[input]` of stylelint."
+    description: "Files or glob. Default: `**/*.css`.  It's the same as `[input]` of stylelint."
     default: '**/*.css'
+  stylelint_ignore:
+    description: "Files or glob. It's the same as `--ignore-pattern` of stylelint"
+  stylelint_config:
+    description: "It's the same as `--config` flag of stylelint."
 runs:
   using: 'docker'
   image: 'Dockerfile'

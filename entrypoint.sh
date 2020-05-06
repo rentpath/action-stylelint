@@ -10,4 +10,4 @@ npm install -g stylelint@$(jq -r '.dependencies.stylelint // .devDependencies.st
 
 stylelint --version
 
-stylelint "${INPUT_STYLELINT_INPUT:-'**/*.css'}" | reviewdog -f="stylelint" -reporter="github-pr-check" -level="${INPUT_LEVEL}"
+stylelint --allow-empty-input --ignore-pattern "${INPUT_STYLELINT_IGNORE}" --config "${INPUT_STYLELINT_CONFIG}" "${INPUT_STYLELINT_INPUT:-'**/*.css'}" | reviewdog -f="stylelint" -reporter="github-pr-check" -level="${INPUT_LEVEL}"
