@@ -8,6 +8,9 @@ inputs:
   level:
     description: 'Report level for reviewdog [info,warning,error]'
     default: 'error'
+  name:
+    description: 'Report name'
+    default: 'stylelint'
   reporter:
       description: |
         Reporter of reviewdog command [github-pr-check,github-pr-review,github-check].
